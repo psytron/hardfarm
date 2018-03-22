@@ -1,0 +1,49 @@
+<dom-module id="form-radios">
+  <template>
+    <style>
+      .form-group {
+        margin: 10px 0;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{options}}">
+      <div class="form-group">
+        <input type="radio" name="[[name]]" id="[[item.identifier]]" class="form-control" value="[[item.val]]" />
+        <label for$="[[item.identifier]]">[[item.displayText]]</label>
+      </div>
+    </template>
+  </template>
+
+  <script>
+    /**
+     * `form-input`
+     * Basic text input field for a form
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     *
+     * @name string value for the common radio group
+     * @options array of objects, each object is an input radio
+     *  @options.identifier populates the inputs id and labels for attribute
+     *  @options.val populates value for each radio
+     *  @options.displayText populates label text
+     *
+     */
+    class FormRadios extends Polymer.Element {
+      static get is() { return 'form-radios'; }
+      static get properties() {
+        return {
+          name: {
+            type: String,
+            value: 'default'
+          },
+          options: {
+            type: Array,
+          }
+        };
+      }
+    }
+    window.customElements.define(FormRadios.is, FormRadios);
+  </script>
+</dom-module>

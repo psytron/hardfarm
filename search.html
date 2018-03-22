@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>HARDFARM.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="./css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <style type="text/css">
+            /*Ref: Thanks to: http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html */
+            #pinBoot {
+              position: relative;
+              max-width: 100%;
+              width: 100%;
+            }
+            .imgx {
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+            }
+            .white-panel {
+              position: absolute;
+              background: white;
+              box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+              padding: 10px;
+            }
+            /*
+            stylize any heading tags withing white-panel below
+            */
+
+            .white-panel h1 {
+              font-size: 1em;
+            }
+            .white-panel h1 a {
+              color: #A92733;
+            }
+            .white-panel:hover {
+              box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+              margin-top: -5px;
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out;
+            }
+        </style>
+        <script src="./js/jquery-1.11.1.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+
+
+        <style>
+            .resu{ border:solid #111 1px; border-radius: 10px; margin-bottom:5px; overflow:hidden;
+                font-size:12px; cursor: pointer; cursor: hand; color:#AAAAAA;
+                background-color:rgba(1,1,1,0.9) }
+            .resutok{ background-color:white; border:solid #CCCCCC 1px; border-radius:10px; margin-bottom:4px; overflow:hidden; font-size:23px; text-align:center; padding:20px; }
+            .colu{ width:142px; display: inline-block; padding:9px;  }
+            .field1{ width:45px; }
+            .field2{ width:255px; }
+            .colulast{              display: inline-block;   }
+            .playi{ width:20px;  display: block; margin: 0 auto; }
+            .spin{ width:46px; position:absolute; right:2px; bottom:0px; }
+            .active{ display:none; }
+            .startsurv{ width:20px; margin-left:18px; margin-top:-3px; }
+            .light{ color:#CCCCCC; }
+            .brand{ position:relative; margin-top:41px; }
+            .holder{ width:500px; margin:auto; position:absolute; display:table; left:0; right: 0;}
+
+            .searchlogo{ position:absolute; left:4px; bottom:0px; vertical-align:bottom; font-size:19px; color:#335533; font-weight:bold; }
+            .octlogo{  width:44px; position:absolute; right:5px; margin-bottom:4px; }
+            .survmessage{ font-size:10px; color:#888888; text-align:center; }
+            #searchbox{ background-color:#EEEEEE; color:#222222; }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <!-- SEARCH -->
+                <div class="holder">
+                    <div class="brand">
+                        <img class="zblogo" src="./img/plant.png" style="width:40px; margin-bottom:3px;"/>
+                        <div class="searchlogo" style="margin-left:30px;">
+                            <span style="color:#663333;">Hard</span><span style="color:green; padding:0px;">Farm</span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="position:relative;">
+                        <input id='searchbox' type="text" class="form-control input-lg">
+                        <img class="spin" src="./img/spinoff.png"/>
+                        <img class="spin active" src="./img/spinner.gif"/>
+                    </div>
+                    <div id="search_results">
+                    </div>
+                </div>
+                <!-- SEARCH -->
+
+                <div style="height:150px;"></div>
+                <section id="pinBoot" style="height: 1170px;">
+                    <!-- articles were here -->
+                </section>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#pinBoot').pinterest_grid({
+                    no_columns: 4,
+                    padding_x: 10,
+                    padding_y: 10,
+                    margin_bottom: 50,
+                    single_column_breakpoint: 700
+                });
+            });
+
+            /* Ref: Thanks to: http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html */
+            /*
+                Pinterest Grid Plugin
+                Copyright 2014 Mediademons
+                @author smm 16/04/2014
+                usage:
+                 $(document).ready(function() {
+
+                    $('#blog-landing').pinterest_grid({
+                        no_columns: 4
+                    });
+
+                });
+            */
+            (function ($, window, document, undefined) {
+                var pluginName = 'pinterest_grid',
+                    defaults = {
+                        padding_x: 10,
+                        padding_y: 10,
+                        no_columns: 3,
+                        margin_bottom: 50,
+                        single_column_breakpoint: 700
+                    },
+                    columns,
+                    $article,
+                    article_width;
+
+                function Plugin(element, options) {
+                    this.element = element;
+                    this.options = $.extend({}, defaults, options) ;
+                    this._defaults = defaults;
+                    this._name = pluginName;
+                    this.init();
+                }
+
+                Plugin.prototype.init = function () {
+                    var self = this,
+                        resize_finish;
+
+                    $(window).resize(function() {
+                        clearTimeout(resize_finish);
+                        resize_finish = setTimeout( function () {
+                            self.make_layout_change(self);
+                        }, 11);
+                    });
+
+                    self.make_layout_change(self);
+
+                    setTimeout(function() {
+                        $(window).resize();
+                    }, 500);
+                };
+
+                Plugin.prototype.calculate = function (single_column_mode) {
+                    var self = this,
+                        tallest = 0,
+                        row = 0,
+                        $container = $(this.element),
+                        container_width = $container.width();
+                        $article = $(this.element).children();
+
+                    if(single_column_mode === true) {
+                        article_width = $container.width() - self.options.padding_x;
+                    } else {
+                        article_width = ($container.width() - self.options.padding_x * self.options.no_columns) / self.options.no_columns;
+                    }
+
+                    $article.each(function() {
+                        $(this).css('width', article_width);
+                    });
+
+                    columns = self.options.no_columns;
+
+                    $article.each(function(index) {
+                        var current_column,
+                            left_out = 0,
+                            top = 0,
+                            $this = $(this),
+                            prevAll = $this.prevAll(),
+                            tallest = 0;
+
+                        if(single_column_mode === false) {
+                            current_column = (index % columns);
+                        } else {
+                            current_column = 0;
+                        }
+
+                        for(var t = 0; t < columns; t++) {
+                            $this.removeClass('c'+t);
+                        }
+
+                        if(index % columns === 0) {
+                            row++;
+                        }
+
+                        $this.addClass('c' + current_column);
+                        $this.addClass('r' + row);
+
+                        prevAll.each(function(index) {
+                            if($(this).hasClass('c' + current_column)) {
+                                top += $(this).outerHeight() + self.options.padding_y;
+                            }
+                        });
+
+                        if(single_column_mode === true) {
+                            left_out = 0;
+                        } else {
+                            left_out = (index % columns) * (article_width + self.options.padding_x);
+                        }
+
+                        $this.css({
+                            'left': left_out,
+                            'top' : top
+                        });
+                    });
+
+                    this.tallest($container);
+                    $(window).resize();
+                };
+
+                Plugin.prototype.tallest = function (_container) {
+                    var column_heights = [],
+                        largest = 0;
+
+                    for(var z = 0; z < columns; z++) {
+                        var temp_height = 0;
+                        _container.find('.c'+z).each(function() {
+                            temp_height += $(this).outerHeight();
+                        });
+                        column_heights[z] = temp_height;
+                    }
+
+                    largest = Math.max.apply(Math, column_heights);
+                    _container.css('height', largest + (this.options.padding_y + this.options.margin_bottom));
+                };
+
+                Plugin.prototype.make_layout_change = function (_self) {
+                    if($(window).width() < _self.options.single_column_breakpoint) {
+                        _self.calculate(true);
+                    } else {
+                        _self.calculate(false);
+                    }
+                };
+
+                $.fn[pluginName] = function (options) {
+                    return this.each(function () {
+                        if (!$.data(this, 'plugin_' + pluginName)) {
+                            $.data(this, 'plugin_' + pluginName,
+                            new Plugin(this, options));
+                        }
+                    });
+                }
+            })(jQuery, window, document);
+        </script>
+
+
+
+        <div id="templates" style="display:none;">
+            <div id="result">
+                <div class="resu">
+                    <div class="colu field1"></div>
+                    <div class="colu field2"></div>
+                    <div class="colu field3"></div>
+                    <div class="colulast">
+                        <img class="startsurv" src="/static/img/play_button.png"></img>
+                    </div>
+                </div>
+            </div>
+
+            <div id="artix">
+                <article class="white-panel r1 c0" style="width: 282.5px; left: 0px; top: 0px;">
+                    <img class='field4 imgx' src="./img/thinkpadg3.jpg" alt="">
+                    <h4><a href="https://bootsnipp.com/iframe/Zkk0O#" class='field1'>Tx1G3</a></h4>
+                    <h5 class='field2'>$333 / one time</h5>
+                    <p class='field3'>xxxxxx.</p>
+                </article>
+            </div>
+        </div>
+
+
+        <script src="./js/searchmod.js"></script>
+    </body>
+
+</html>
