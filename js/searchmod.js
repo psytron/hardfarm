@@ -5,17 +5,16 @@ var selected_index=0;
 var loaded_indexes=[];
 
 var items = [
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250' , farmer:'John Brody', body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'250 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250 / onetime' ,farmer:'Michael', body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
-    { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'250 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
-    { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'250 / onetime' ,farmer:'Mondo Betty', body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'raspberry.jpg' , price:'250 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Banana Pi'  , img:'banana.png' , price:'250 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
-    { title:'DELL 3000'  , img:'computer1.jpg' , price:'250 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Samsung'  , img:'computer2.jpg' , price:'250 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
+    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'150 / onetime' ,farmer:'Felix R', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'50 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'124 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'421 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'251 / onetime' ,farmer:'Mondo Betty', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi'  , img:'raspberry.jpg' , price:'255 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Banana Pi'  , img:'banana.png' , price:'256 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
+    { title:'DELL 3000'  , img:'computer1.jpg' , price:'15 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Samsung'  , img:'computer2.jpg' , price:'5350 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
 ]
 
 function tileResults( items )
@@ -25,7 +24,7 @@ function tileResults( items )
         var template = $("#templates #artix").contents().clone();
         template.find('.field1').html( valx['title'])
         template.find('.field2').html( valx['price'] )
-        template.find('.field3').html( valx['body'] )
+        template.find('.field3').html( 'FARMER: '+valx['farmer'] )
         template.find('.field4').attr('src', './img/'+valx['img'] );
         template.appendTo( rez )
         console.log( 'some output from console two ')
