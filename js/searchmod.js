@@ -6,7 +6,7 @@ var loaded_indexes=[];
 
 var items = [
     { title:'Samsung GalaxyS6 Android 8 Orio'  , img:'samsung.png' , price:'$110 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
-    { title:'BLU VIVO 4GLTE (ROOTED) Android 8'  , img:'iphone.jpg' , price:'$56 USD' , farmer:'Great Orient PC', body:'Ibm thinkpad is perfect' },
+    { title:'BLU VIVO 4GLTE (ROOTED) Android 8'  , img:'blue.jpg' , price:'$56 USD' , farmer:'Great Orient PC', body:'Ibm thinkpad is perfect' },
     { title:'IBM Thinkpad. Ubuntu 17'  , img:'thinkpadg3.jpg' , price:'$120 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
     { title:'Raspberry Pi Ubuntu 17 +100GB Drive', img:'rasp.jpg' , price:'$1 / month Datacenter: Farver DTC' ,farmer:'Felix R. DataCenter: 365Main', body:'Ibm thinkpad is perfect' },
     { title:'Dell Edge 2900 Debian'  , img:'poweredge.jpg' , price:'$3 / month' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
