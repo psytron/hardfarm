@@ -5,16 +5,18 @@ var selected_index=0;
 var loaded_indexes=[];
 
 var items = [
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'150 / onetime' ,farmer:'Felix R', body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'50 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'124 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
-    { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'421 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
-    { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'251 / onetime' ,farmer:'Mondo Betty', body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'raspberry.jpg' , price:'255 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Banana Pi'  , img:'banana.png' , price:'256 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
-    { title:'DELL 3000'  , img:'computer1.jpg' , price:'15 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Samsung'  , img:'computer2.jpg' , price:'5350 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
+    { title:'Samsung Galaxy 6'  , img:'samsung.png' , price:'$110 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'Rooted iPhone 8'  , img:'iphone.jpg' , price:'$310 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'$120 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi', img:'rasp.jpg' , price:'$1 / month' ,farmer:'Felix R', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900'  , img:'poweredge.jpg' , price:'$3 / month' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'Rarspberry PIB+', img:'rasp.jpg' , price:'$12 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'$1421 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'$2555 / onetime' ,farmer:'BettyPaige', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry PiB+'  , img:'raspberry.jpg' , price:'$5 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Banana Pi'  , img:'banana.png' , price:'$1 / month' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
+    { title:'DELL 3000 LINUX'  , img:'computer1.jpg' , price:'$1 / month' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Samsung LINUX'  , img:'computer2.jpg' , price:'$53 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
 ]
 
 function tileResults( items )
