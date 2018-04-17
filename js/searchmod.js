@@ -5,12 +5,17 @@ var selected_index=0;
 var loaded_indexes=[];
 
 var items = [
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' },
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'250 / onetime' , body:'Ibm thinkpad is perfect' }
+    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250' , farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi'  , img:'poweredge.jpg' , price:'250 / onetime' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'250 / onetime' ,farmer:'Michael', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900', img:'rasp.jpg' , price:'250 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'250 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
+    { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'250 / onetime' ,farmer:'Mondo Betty', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi'  , img:'raspberry.jpg' , price:'250 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Banana Pi'  , img:'banana.png' , price:'250 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
+    { title:'DELL 3000'  , img:'computer1.jpg' , price:'250 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Samsung'  , img:'computer2.jpg' , price:'250 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
 ]
 
 function tileResults( items )

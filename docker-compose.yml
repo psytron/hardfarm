@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+   
+
+   nginx:
+     image: nginx
+     expose:
+       - 80
+     restart: always
+     volumes:
+       - .:/usr/share/nginx/html
+     environment:
+       VIRTUAL_HOST: hardfarm, hardfarm.io
+       VIRTUAL_PORT: 80
+       LETSENCRYPT_HOST: hardfarm.io
+       LETSENCRYPT_EMAIL: support@hardfarm.io
+
+networks:
+  default:
+    external:
+      name: webproxy
