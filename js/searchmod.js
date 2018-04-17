@@ -5,18 +5,18 @@ var selected_index=0;
 var loaded_indexes=[];
 
 var items = [
-    { title:'Samsung Galaxy 6'  , img:'samsung.png' , price:'$110 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
-    { title:'Rooted iPhone 8'  , img:'iphone.jpg' , price:'$310 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
-    { title:'IBM Thinkpad'  , img:'thinkpadg3.jpg' , price:'$120 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
-    { title:'Raspberry Pi', img:'rasp.jpg' , price:'$1 / month' ,farmer:'Felix R', body:'Ibm thinkpad is perfect' },
-    { title:'Dell Edge 2900'  , img:'poweredge.jpg' , price:'$3 / month' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
-    { title:'Rarspberry PIB+', img:'rasp.jpg' , price:'$12 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
+    { title:'Samsung GalaxyS6 Android 8 Orio'  , img:'samsung.png' , price:'$110 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'BLU VIVO 4GLTE (ROOTED) Android 8'  , img:'iphone.jpg' , price:'$56 USD' , farmer:'Great Orient PC', body:'Ibm thinkpad is perfect' },
+    { title:'IBM Thinkpad. Ubuntu 17'  , img:'thinkpadg3.jpg' , price:'$120 USD' , farmer:'Cyberon', body:'Ibm thinkpad is perfect' },
+    { title:'Raspberry Pi Ubuntu 17 +100GB Drive', img:'rasp.jpg' , price:'$1 / month Datacenter: Farver DTC' ,farmer:'Felix R. DataCenter: 365Main', body:'Ibm thinkpad is perfect' },
+    { title:'Dell Edge 2900 Debian'  , img:'poweredge.jpg' , price:'$3 / month' ,farmer:'John Brody', body:'Ibm thinkpad is perfect' },
+    { title:'Rarspberry PIB+ Raspin', img:'rasp.jpg' , price:'$12 / onetime' , farmer:'Larry Bondo',body:'Ibm thinkpad is perfect' },
     { title:'Bitcoin Miner'  , img:'miner1.jpg' , price:'$1421 / onetime' , farmer:'Vegojelly',body:'Ibm thinkpad is perfect' },
     { title:'Bitcoin Miner XL10'  , img:'miner2.jpg' , price:'$2555 / onetime' ,farmer:'BettyPaige', body:'Ibm thinkpad is perfect' },
     { title:'Raspberry PiB+'  , img:'raspberry.jpg' , price:'$5 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Banana Pi'  , img:'banana.png' , price:'$1 / month' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
-    { title:'DELL 3000 LINUX'  , img:'computer1.jpg' , price:'$1 / month' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Samsung LINUX'  , img:'computer2.jpg' , price:'$53 / onetime' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' }    
+    { title:'Banana Pi Debian'  , img:'banana.png' , price:'$1 / month' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
+    { title:'DELL 3000 Debian LINUX'  , img:'computer1.jpg' , price:'$1 / month' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
+    { title:'Samsung Ubuntu 17'  , img:'computer2.jpg' , price:'$53 / onetime' , farmer:'Great Orient PC',body:'Ibm thinkpad is perfect' }    
 ]
 
 function tileResults( items )
