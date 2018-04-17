@@ -16,7 +16,8 @@ var items = [
     { title:'Raspberry PiB+'  , img:'raspberry.jpg' , price:'$5 / onetime' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
     { title:'Banana Pi Debian'  , img:'banana.png' , price:'$1 / month' , farmer:'Jenny X',body:'Ibm thinkpad is perfect' },
     { title:'DELL 3000 Debian LINUX'  , img:'computer1.jpg' , price:'$1 / month' ,farmer:'Papa J', body:'Ibm thinkpad is perfect' },
-    { title:'Samsung Ubuntu 17'  , img:'computer2.jpg' , price:'$53 / onetime' , farmer:'Great Orient PC',body:'Ibm thinkpad is perfect' }    
+    { title:'Samsung Ubuntu 17'  , img:'computer2.jpg' , price:'$23 / onetime' , farmer:'Great Orient PC',body:'Ibm thinkpad is perfect' }    ,
+    { title:'LG V20 Android 8 Bare'  , img:'lgv20.jpg' , price:'$22 / onetime UNLOCKED' , farmer:'Great Orient PC',body:'Ibm thinkpad is perfect' }    
 ]
 
 function tileResults( items )
